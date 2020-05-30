@@ -47,15 +47,16 @@ public class AppMain {
 			sessionObj.save(marksObj2);
 
 			MarksDetails marksObj3 = new MarksDetails("Science1", "100", "94",  "Pass");  
-			marksObj3.setStudent(studentObj);
+			marksObj3.setStudent(new Student("AmitPre", "Geek1",  "j1avageek@javacodegeeks.com", "01123456789"));
 			sessionObj.save(marksObj3);
 
 			// Committing The Transactions To The Database
 			tx.commit();
-		//	sessionObj.clear();
+		//	sessionObj.flush();
+	    	sessionObj.clear();
 		//	sessionObj.evict(marksObj2);
 			MarksDetails readerEntity = (MarksDetails) sessionObj.get(MarksDetails.class, 2L);
-			Student subscriptionEntity = (Student) sessionObj.get(Student.class, 1L);
+			Student subscriptionEntity = (Student) sessionObj.get(Student.class, 2L);
 		
 	        if (readerEntity != null) {
 	           System.out.println(readerEntity.getResult());
@@ -68,7 +69,7 @@ public class AppMain {
 	        
 
 			System.out.println("\n.......Records Saved Successfully To The Database.......");
-			tx.commit();
+		
 		
 		} catch(Exception sqlException) {
 			if(null != sessionObj.getTransaction()) {

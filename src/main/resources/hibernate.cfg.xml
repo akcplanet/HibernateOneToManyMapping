@@ -19,11 +19,13 @@
 		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 
 		<!-- Mapping With Model Class Containing Annotations -->
-	    <mapping class="com.jcg.hibernate.onetomany.mapping.Student" />
-		<mapping class="com.jcg.hibernate.onetomany.mapping.MarksDetails" /> 
+	<!--     <mapping class="com.jcg.hibernate.onetomany.mapping.Student" />
+		<mapping class="com.jcg.hibernate.onetomany.mapping.MarksDetails" />  -->
+		
 		<mapping class="com.jcg.hibernate.manytomany.mapping.Employee" />
 		<mapping class="com.jcg.hibernate.manytomany.mapping.Project" />
-		<mapping class="com.jcg.hibernate.manytomany.mapping2.UserDetails" />
+		
+	<!-- 	<mapping class="com.jcg.hibernate.manytomany.mapping2.UserDetails" />
         <mapping class="com.jcg.hibernate.manytomany.mapping2.Vehicle" />
         
         <mapping class="com.example.OneToOne.domain.bidirection.CardHolder" />
@@ -34,7 +36,7 @@
         <mapping class="com.example.OneToOne.domain.bidirection.Staff" />
         
            <mapping class="com.example.OneToOne.domain.unidirection.EmployeeDetails" />
-           <mapping class="com.example.OneToOne.domain.unidirection.EmployeeInfo" />
+           <mapping class="com.example.OneToOne.domain.unidirection.EmployeeInfo" /> -->
         
         
 	</session-factory>

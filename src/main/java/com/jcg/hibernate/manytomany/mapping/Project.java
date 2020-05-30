@@ -1,9 +1,11 @@
 package com.jcg.hibernate.manytomany.mapping;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -32,8 +34,8 @@ public class Project {
 			this.name = name;
 		}
 
-		@ManyToMany(cascade = CascadeType.ALL,mappedBy="projects")
-		private List<Employee> employees;
+		@ManyToMany(cascade = CascadeType.ALL,mappedBy="projects" ,fetch=FetchType.LAZY)
+		private List<Employee> employees = new ArrayList<Employee>();
 
 		public int getIdproject() {
 			return idproject;
